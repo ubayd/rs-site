@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load i18n mezzanine_tags blog_tags %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+
+{% block title %}
+{% trans "Home" %}
+{% endblock %}
+
+
+
+{%block banner %}
+	<tr>
+	<td colspan="4">
+		<div id="slider">
+			<div id="wowslider-container2">
+				<div class="ws_images">
+                	<ul><!--Picture Size = 975px*360px-->
+						<li><a href="http://facebook.com"><img src="{{STATIC_URL}}images/pic2.jpg" alt="" title="" id="wows2_0"/></a></li>
+
+						<li><img src="{{STATIC_URL}}images/picture2.jpg" alt="" title="" id="wows2_1"/></li>
+					</ul>
+               	</div>
+				<div class="ws_bullets">
+                	<div><!--Picture Size = 243px*90px-->
+						<a href="#" title=""><img src="{{STATIC_URL}}images/pic2.jpg" width="243" height="90" alt="318544_2565731020104_1159008477_33033061_1721889294_n"/>2</a>
+						<a href="#" title=""><img src="{{STATIC_URL}}images/picture2.jpg" width="243" height="90" alt="395753_2938765985745_1159008477_33216478_765265300_n"/>3</a>
+					</div></div>
+
+				<div class="ws_shadow"></div>
+			</div>
+				<script type="text/javascript" src="{{STATIC_URL}}js/wowslider.js"></script>
+				<script type="text/javascript" src="{{STATIC_URL}}js/script.js"></script>
+        </div>
+	</td>
+</tr>
+{% endblock%}
+
+{% block content %}
+<!--Container-->    
+<tr>
+<td colspan="4" valign="middle">
+		<div id="container">
+        	<div id="contentheader">
+            <p>LATEST ENTRIES</p>
+        	</div>
+            <div id="content">
+            	<div class="homepagecontent" id="1">
+                	{% blog_recent_posts 5 as recent_posts %}
+					{% if recent_posts %}
+					<ul class="unstyled recent-posts">
+					{% for recent_post in recent_posts %}
+						{% editable recent_post.title %}
+						<h2><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h2>
+						{% endeditable %}
+			
+						{% if recent_post.featured_image %}
+						<img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 90 90 %}">
+						{% endif %}
+			
+						{% editable recent_post.content %}
+						{{ recent_post.description_from_content|safe }}
+						{% endeditable %}
+					    
+					    
+					{% endfor %}
+					</ul>
+					</div>
+					{% endif %}
+					
+					
+
+					
+                </div>
+            </div>
+    	</div>
+    </td>
+</tr>
+<!--/Container-->
+
+{% endblock %}

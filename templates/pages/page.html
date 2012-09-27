@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags blog_tags keyword_tags %}
+
+{% block meta_title %}{{ page.title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+{% if not forloop.first %}, {% endif %}
+{{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% endblock %}
+
+{% block content %}
+<!--Container-->
+<!--Page-->
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/pagestyle.css" />
+<!--/Page-->
+<tr>
+
+	<td valign="top">
+	<div id="container">
+
+		<div id="contentheader">
+			<p>
+				{{page.title}}
+			</p>
+			<!-- <div id="social"> -->
+			<!--Add the page URL after the equal (=) of every social share link.-->
+			<!--<div id="f">
+			<a href="http://facebook.com/share.php?u=" title="Share on Facebook" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('facebook','','style/images/f.png',1)"><img src="{{STATIC_URL}}images/ffade.png" name="facebook" width="16" height="15" border="0" id="facebook" /></a>
+			</div>
+			<div id="t">
+			<a href="http://twitter.com/home?status=" title="Spread the word on Twitter" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('twitter','','style/images/t.png',1)"><img src="{{STATIC_URL}}images/tfade.png" name="twitter" width="16" height="15" border="0" id="twitter" /></a>
+			</div>
+			<div id="d">
+			<a href="http://digg.com/submit?phase=2&amp;url=" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digg','','style/images/d.png',1)"><img src="{{STATIC_URL}}images/dfade.png" name="digg" width="16" height="15" border="0" id="digg" /></a>
+			</div>
+			<div id="s">
+			<a href="http://stumbleupon.com/submit?url=" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('stumble','','style/images/s.png',1)"><img src="{{STATIC_URL}}images/sfade.png" name="stumble" width="16" height="15" border="0" id="stumble" /></a>
+			</div> -->
+		</div>
+		<div id="content">
+			{% block main %}
+			{% endblock main %}
+		</div>
+	</div><!--Sidebar-->
+	<div id="sidebar">
+		<!--<div class="sidebarelement">
+			<div class="sidebarcontent">
+				<div id="getconnected">
+				<div class="sidebarheader">
+				<p>
+				Connect
+				</p>
+				</div>
+				<div class="connects" id="facebook">
+				<a href=""><img src="{{STATIC_URL}}images/getconnected_fb.png" /> Facebook</a>
+				<p>
+				Name
+				</p>
+				</div>
+				<div class="connects" id="twitter">
+				<a href=""><img src="{{STATIC_URL}}images/getconnected_twitter.png" /> Twitter</a>
+				<p>
+				Name
+				</p>
+				</div>
+				<div class="connects" id="youtube">
+				<a href=""><img src="{{STATIC_URL}}images/getconnected_youtube.png" /> Youtube</a>
+				<p>
+				Name
+				</p>
+				</div>
+				<div class="connects" id="stumble">
+				<a href=""><img src="{{STATIC_URL}}images/getconnected_stumbleupon.png" /> StumbleUpon</a>
+				<p>
+				Name
+				</p>
+				</div>
+				</div>-->
+				<div id="whatsrecent">
+					<p> WHAT'S RECENT </p>
+					{% block right_panel %}
+						{% blog_recent_posts 10 as recent_posts %}
+							{% if recent_posts %}
+								<ul class="unstyled recent-posts">
+									
+								{% for blog_post in recent_posts %}
+									{% ifequal blog_post.keywords_string "roboshepherd" %}
+									<li><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></li>
+									{% endifequal %}
+								{% endfor %}
+								</ul>
+							{% endif %}
+						
+					{% endblock %}
+
+				</div>
+
+			</div>
+		</div>
+	</div><!--/Sidebar--></td>
+
+</tr>
+<!--/Container-->
+
+{% endblock %}

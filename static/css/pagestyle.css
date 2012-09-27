@@ -1,0 +1,351 @@
+@charset "utf-8";
+body {
+	background-color: #000000;
+}
+#wrapper {
+	width: 975px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -487.5px;
+	top: 30px;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+#wrapper table {
+	max-width: 975px;
+}
+#wrapper p {
+	font-family: Georgia;
+	font-size: inherit;
+}
+.border {
+	border-top: 1px solid #d9d9d9;
+}
+.header {
+	width: 225px;
+	height: 150px;
+	overflow: hidden;
+	position: relative;
+}
+#logo {
+	float:left;
+	width: 250px;
+	height: 150px;
+	position: relative;
+	top: 10px;
+	margin-left: 25px;
+	background: url("images/logo.png");
+}
+#slogan {
+	float: left;
+	top: 30px;
+	left: 25px;
+	position: relative;
+	margin-left: 400px;
+	padding: 0.3em;
+}
+#slogan p {
+	color: #666;
+	font-family: Georgia;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+#search {
+	top: 30px;
+	right: -30px;
+}
+#searchform {
+	width: 120px;
+	margin-top: 0px;
+	margin-left: 15px;
+	float: left;
+}
+#searchform fieldset {
+	width: 100px;
+	height: 16px;
+	background: #dadada;
+	position: relative;
+	top: -6px;
+	border: none;
+}
+#searchform input {
+	width: 54px;
+	border: none;
+	background: none;
+	padding: 8px;
+	color: #fff;
+	font: 11px Georgia, Geneva, "Times New Roman", times;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+#searchform button {
+	width: 16px;
+	height: 16px;
+	background: url("images/search.png") 50% 50% no-repeat;
+	cursor: pointer;
+	border: none;
+	vertical-align: middle;
+	position: relative;
+	left: 10px;
+}
+#navmenu {
+	float: left;
+	width: 975px;
+	height: 30px;
+	position: relative;
+	vertical-align: 50%;
+	overflow: hidden;
+	background-color: #eee;
+}
+#navmenu a {
+	color: #000;
+	text-decoration: none;
+	font-family: Georgia;
+	font-size: 16px;
+	position: relative;
+	left: 25px;
+}
+#navmenu a:hover, #navmenu a:focus {
+	color: #FFF;
+}
+#slider {
+	width: 975px;
+	height: 360px;
+	float: left;
+	position: relative;
+	left: -3.5px;
+	top: 10px;
+	z-index: 9;
+}
+#container {
+	float:left;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 66%;
+
+}
+#sidebar {
+	float:left;
+	height: auto;
+	position: relative;
+	left: 70px;
+	top: 140px;
+	bottom: 20px;
+}
+.sidebarelement {
+}
+.sidebarheader {
+	font-family: Georgia;
+	font-size: 18px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #d9d9d9;
+}
+.sidebarheader p {
+	color: #666666;
+}
+.sidebarcontent {
+}
+.connects {
+	width: 125px;
+	height: 60px;
+	position: relative;
+}
+.connects:hover {
+	border-bottom: 5px solid #FFF;
+}
+.connects a {
+	color: #000;
+	text-decoration: none;
+	font-family: Georgia;
+	font-size: 12px;
+	position: relative;
+}
+.connects img {
+	position: relative;
+	top: 3px;
+}
+.connects p {
+	position: relative;
+	top: -9px;
+	margin-left: 13px;
+	color: #999;
+}
+#facebook {
+	left: 10px;
+	top: 15px;
+}
+#twitter {
+	left: 130px;
+	top: -45px;
+}
+#youtube {
+	left: 10px;
+	top: -50px;
+}
+#stumble {
+	left: 130px;
+	top: -110px;
+}
+#whatsrecent {
+	position: relative;
+	top: -110px;
+	left: 0px;
+}
+.recents {
+	margin-top: -20px;
+	margin-left: 10px;
+}
+.recents a {
+	color: #000;
+	text-decoration: none;
+	font-family: Georgia;
+	font-size: 12px;
+	position: relative;
+}
+.recents a:hover {
+	background-color: #00F;
+}
+#recent1 {
+}
+#recent2 {
+	position: relative;
+	top: -20px;
+}
+#recent3 {
+	position: relative;
+	top: -40px;
+}
+#recent4 {
+	position: relative;
+	top: -60px;
+}
+.recentthumb {
+	width: 50px;
+	height: 50px;
+	overflow: hidden !important;
+}
+.recenttext {
+	width: 175px;
+	height: 25px;
+	position: relative;
+	left: 60px;
+	top: -40px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#contentheader {
+	background-color: #FFF;
+	width: 598px;
+	height: 60px;
+	position: relative;
+	top: -10px;
+	left: -3.5px;
+	border-bottom: 1px solid #d9d9d9;
+	text-transform: uppercase;
+	z-index: 10;
+}
+#contentheader p {
+	font: Georgia;
+	font-size: 18px;
+	color: #666666;
+	left: -17px;
+	position: relative;
+	top: 18px
+}
+#social {
+	width: 20px;
+	height: 15px;
+	position: relative;
+	left: 518px;
+	top: -18px
+}
+#f {
+	width: 16px;
+	height: 15px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+#t {
+	width: 16px;
+	height: 15px;
+	position: relative;
+	left: 21px;
+	top: -15px;
+}
+#d {
+	width: 16px;
+	height: 15px;
+	position: relative;
+	left: 42px;
+	top: -30px;
+}
+#s {
+	width: 16px;
+	height: 15px;
+	position: relative;
+	left: 63px;
+	top: -45px;
+}
+#contentheader p {
+	font: Georgia;
+	font-size: 18px;
+	color: #666666;
+	padding-left: 50px;
+	position: relative;
+	top: 18px;
+}
+#footer {
+	border-top: 1px solid #d9d9d9;
+}
+#content {
+	width: 558px;
+	position: relative;
+	top: 0px;
+	margin-left: 30px;
+	margin-bottom: 55px;
+}
+#copyright {
+	width: 540px;
+	height: 20px;
+	position: relative;
+	top: 10px;
+	left: 0px;
+}
+#copyright p {
+	float: left;
+	position: relative;
+	left: 30px;
+	color: #666;
+	font-size: 12px;
+}
+#copyright a {
+	color: #000;
+	text-decoration: none;
+}
+#coryright a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+#design {
+	width: 400px;
+	height: 20px;
+	position: relative;
+	top: -30px;
+	left: 540px;
+}
+#design p {
+	float: right;
+	color: #666;
+	font-size: 12px;
+}
+#design a {
+	color: #000;
+	text-decoration: none;
+}
+#design a:hover {
+	color: #666;
+	text-decoration: underline;
+}
